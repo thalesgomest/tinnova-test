@@ -66,14 +66,14 @@ java -version
 ```
 
 ## Compile o Código
-Abra o terminal ou prompt de comando e navegue até o diretório onde o arquivo Main.java está localizado (`bubble-sort\src\com\tinnova`). Compile o código com o seguinte comando:
+Abra o terminal ou prompt de comando e navegue até o diretório onde o arquivo Main.java está localizado (`bubble_sort\src\com\tinnova`). Compile o código com o seguinte comando:
 
 ```bash
 javac -d ..\..\..\out\production\  BubbleSort.java
 ```
 
 ## Execute o Código
-Navegue para a pasta onde o código compilado foi armazenado (`bubble-sort\out\production`) e então execute o código com o seguinte comando:
+Navegue para a pasta onde o código compilado foi armazenado (`bubble_sort\out\production`) e então execute o código com o seguinte comando:
 
 ```bash
 java com.tinnova.BubbleSort
