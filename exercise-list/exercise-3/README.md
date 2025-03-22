@@ -21,3 +21,33 @@ Veja mais alguns resultados e que você poderá utilizar como testes:
 ````
 
 Atente que O! = 1 porque o produto vazio (produto de nenhum número) é 1.
+
+
+# ⚙ Como executar?
+
+## Pré-requisitos
+
+Antes de executar o programa, você precisa garantir que tenha o Java Development Kit (JDK) instalado em sua máquina.
+
+1. Instalar o JDK
+Baixe e instale o JDK mais recente da [Oracle JDK](https://www.oracle.com/java/technologies/downloads/).
+
+Após a instalação, verifique se o Java foi instalado corretamente, executando o seguinte comando no terminal ou prompt de comando:
+
+```bash
+java -version
+```
+
+## Compile o Código
+Abra o terminal ou prompt de comando e navegue até o diretório onde o arquivo Main.java está localizado (`factorial\src\com\tinnova`). Compile o código com o seguinte comando:
+
+```bash
+javac -d ..\..\..\out\production\  Factorial.java
+```
+
+## Execute o Código
+Navegue para a pasta onde o código compilado foi armazenado (`factorial\out\production`) e então execute o código com o seguinte comando:
+
+```bash
+java com.tinnova.Factorial
+```
