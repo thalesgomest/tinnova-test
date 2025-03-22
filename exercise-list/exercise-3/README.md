@@ -22,6 +22,9 @@ Veja mais alguns resultados e que você poderá utilizar como testes:
 
 Atente que O! = 1 porque o produto vazio (produto de nenhum número) é 1.
 
+![image](https://github.com/user-attachments/assets/5bfcc952-82ff-48d0-a421-8f37c0a1b9fa)
+
+
 
 # ⚙ Como executar?
 
