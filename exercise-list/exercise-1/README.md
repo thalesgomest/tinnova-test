@@ -41,14 +41,14 @@ java -version
 ```
 
 ## Compile o Código
-Abra o terminal ou prompt de comando e navegue até o diretório onde o arquivo Main.java está salvo (`cd votes_and_voters/src/com/tinnova`). Compile o código com o seguinte comando:
+Abra o terminal ou prompt de comando e navegue até o diretório onde o arquivo Main.java está localizado (`votes_and_voters/src/com/tinnova`). Compile o código com o seguinte comando:
 
 ```bash
-javac -d . Main.java Election.java
+javac -d ..\..\..\out\production\  Main.java Election.java
 ```
 
 ## Execute o Código
-Execute o código com o seguinte comando:
+Navegue para a pasta onde o código compilado foi armazenado (`votes_and_voters/out/production`) e então execute o código com o seguinte comando:
 
 ```bash
 java com.tinnova.Main
