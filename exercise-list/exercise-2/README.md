@@ -49,3 +49,32 @@ Então iremos marcá-lo e não precisaremos percorrer todo o vetor na segunda it
 
 Esse detalhe é importante é fará toda a diferença no entendimento do algoritmo.
 Todo esse processo se repetirá até que todos os itens estejam devidamente ordenados.
+
+# ⚙ Como executar?
+
+## Pré-requisitos
+
+Antes de executar o programa, você precisa garantir que tenha o Java Development Kit (JDK) instalado em sua máquina.
+
+1. Instalar o JDK
+Baixe e instale o JDK mais recente da [Oracle JDK](https://www.oracle.com/java/technologies/downloads/).
+
+Após a instalação, verifique se o Java foi instalado corretamente, executando o seguinte comando no terminal ou prompt de comando:
+
+```bash
+java -version
+```
+
+## Compile o Código
+Abra o terminal ou prompt de comando e navegue até o diretório onde o arquivo Main.java está localizado (`bubble-sort\src\com\tinnova`). Compile o código com o seguinte comando:
+
+```bash
+javac -d ..\..\..\out\production\  BubbleSort.java
+```
+
+## Execute o Código
+Navegue para a pasta onde o código compilado foi armazenado (`bubble-sort\out\production`) e então execute o código com o seguinte comando:
+
+```bash
+java com.tinnova.BubbleSort
+```
