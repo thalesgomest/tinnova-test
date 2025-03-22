@@ -33,12 +33,12 @@ public class BubbleSort {
 
     public static void main(String[] args) {
         int[] v = {5, 3, 2, 4, 7, 1, 0, 6};
-        System.out.println("Vetor antes da ordenação:");
+        System.out.println("Vector before sorting:");
         printVector(v);
 
         bubbleSort(v);
 
-        System.out.println("Vetor após a ordenação:");
+        System.out.println("Vector after sorting:");
         printVector(v);
     }
 }
