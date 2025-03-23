@@ -67,12 +67,12 @@ A API oferece os seguintes endpoints:
 
 O body das requisições POST, PUT e PATCH deve ser um JSON no formato:
 
-```json
+```go
 {
   "nome": "Palio", // Obrigatorio, deve ser um string
   "marca": "FIAT", // Obrigatorio, deve ser um enum VehicleBrands
   "ano": 2002, // Obrigatorio, deve ser um integer
-  "cor":" Branco", // Obrigatorio, deve ser um string
+  "cor": "Branco", // Obrigatorio, deve ser um string
   "descricao": "Fiat Palio 2018, otimo para quem busca um carro compacto e economico.", // Opcional, deve ser um string
   "vendido": false // Obrigatorio, deve ser um boolean
 }
