@@ -98,6 +98,14 @@ public enum VehicleBrands {
 }
 ```
 
+## 🛠 Tecnologias Utilizadas
+- Java 17
+- Spring Boot
+- Maven
+- Spring Data JPA
+- H2 Database
+- Lombok
+
 ## 📩 Contato
 
 Se você tiver alguma duvida, por favor entre em contato com pelo e-mail `thalestargino@gmail.com`.
