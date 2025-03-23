@@ -111,4 +111,10 @@ public class VehicleController {
     return new ResponseEntity<>(vehicles, HttpStatus.OK);
   }
 
+  @GetMapping("/lastweek")
+  public ResponseEntity<?> getVehiclesFromLastWeek() {
+    List<Vehicle> vehicles = this.vehicleService.getVehiclesFromLastWeek();
+    return new ResponseEntity<>(vehicles, HttpStatus.OK);
+  }
+
 }

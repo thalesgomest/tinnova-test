@@ -27,8 +27,8 @@ public interface VehicleRepository extends JpaRepository<Vehicle, Long> {
   @Query("SELECT marca, COUNT(*) AS qtd FROM Vehicle GROUP BY marca ORDER BY qtd")
   List<Object[]> countByMarca();
 
-  @Query("SELECT v FROM Vehicle v WHERE v.createdAt BETWEEN :start AND :end")
-  List<Vehicle> findByLastWeek(LocalDateTime start, LocalDateTime end);
+  @Query("SELECT v FROM Vehicle v WHERE v.createdAt >= :lastWeek")
+  List<Vehicle> findByLastWeek(LocalDateTime lastWeek);
 
   @Query("SELECT (v.ano / 10) * 10 AS decade, COUNT(*) AS qtd " +
       "FROM Vehicle v " +

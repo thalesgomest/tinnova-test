@@ -85,8 +85,9 @@ public class VehicleService {
   }
 
   public List<Vehicle> getVehiclesFromLastWeek() {
-    LocalDateTime oneWeekAgo = LocalDateTime.now().minusWeeks(1);
-    return vehicleRepository.findByLastWeek(oneWeekAgo, LocalDateTime.now());
+    // calcular a semana passada
+    LocalDateTime lastWeek = LocalDateTime.now().minusWeeks(1);
+    return vehicleRepository.findByLastWeek(lastWeek);
   }
 
   public Map<VehicleBrands, Long> countByMarca() {
