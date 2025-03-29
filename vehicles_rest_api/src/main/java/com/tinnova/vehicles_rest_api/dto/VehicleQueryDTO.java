@@ -13,4 +13,10 @@ public class VehicleQueryDTO {
   private String cor;
   private Integer ano;
 
+  public VehicleQueryDTO(VehicleBrands marca, String cor, Integer ano) {
+    this.marca = marca;
+    this.cor = cor;
+    this.ano = ano;
+  }
+
 }

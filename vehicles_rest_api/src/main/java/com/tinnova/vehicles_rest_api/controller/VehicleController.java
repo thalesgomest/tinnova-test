@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.tinnova.vehicles_rest_api.domain.enums.VehicleBrands;
@@ -42,7 +43,11 @@ public class VehicleController {
 
   @Operation(summary = "Get all vehicles", description = "Retorna todos os veículos cadastrados na base de dados")
   @GetMapping
-  public ResponseEntity<List<Vehicle>> getAllVehicles(VehicleQueryDTO query) {
+  public ResponseEntity<List<Vehicle>> getAllVehicles(
+      @RequestParam(required = false) VehicleBrands marca,
+      @RequestParam(required = false) String cor,
+      @RequestParam(required = false) Integer ano) {
+    VehicleQueryDTO query = new VehicleQueryDTO(marca, cor, ano);
     List<Vehicle> vehicles = vehicleService.getAllVehicles(query);
     return new ResponseEntity<>(vehicles, HttpStatus.OK);
   }
