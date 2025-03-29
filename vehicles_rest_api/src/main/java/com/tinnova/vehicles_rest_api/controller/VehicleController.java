@@ -26,23 +26,28 @@ import com.tinnova.vehicles_rest_api.dto.VehicleRequestDTO;
 import com.tinnova.vehicles_rest_api.dto.VehicleResponseDTO;
 import com.tinnova.vehicles_rest_api.service.VehicleService;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/veiculos")
 @CrossOrigin
+@Tag(name = "Vehicles management", description = "APIs for managing vehicles for Tinnova test")
 public class VehicleController {
 
   @Autowired
   private VehicleService vehicleService;
 
+  @Operation(summary = "Get all vehicles", description = "Retorna todos os veículos cadastrados na base de dados")
   @GetMapping
   public ResponseEntity<List<Vehicle>> getAllVehicles(VehicleQueryDTO query) {
     List<Vehicle> vehicles = vehicleService.getAllVehicles(query);
     return new ResponseEntity<>(vehicles, HttpStatus.OK);
   }
 
+  @Operation(summary = "Create a new vehicle", description = "Cria um novo veículo na base de dados")
   @PostMapping
   @Transactional
   public ResponseEntity<?> createVehicle(@Valid @RequestBody VehicleRequestDTO body) {
@@ -53,6 +58,7 @@ public class VehicleController {
     return new ResponseEntity<>(vehicleResponseDTO, HttpStatus.CREATED);
   }
 
+  @Operation(summary = "Get vehicle by id", description = "Retorna um veículo cadastrado na base de dados com base no id")
   @GetMapping("/{id}")
   public ResponseEntity<?> getVehicleById(@PathVariable int id) {
     Optional<Vehicle> existVehicle = this.vehicleService.getVehicleById(id);
@@ -65,12 +71,14 @@ public class VehicleController {
     return new ResponseEntity<>("Veículo não encontrado", HttpStatus.NOT_FOUND);
   }
 
+  @Operation(summary = "Delete vehicle by id", description = "Deleta um veículo cadastrado na base de dados com base no id")
   @DeleteMapping("/{id}")
   public ResponseEntity<?> deleteVehicle(@PathVariable int id) {
     this.vehicleService.deleteVehicle(id);
     return new ResponseEntity<>("Veiculo deletado com sucesso", HttpStatus.OK);
   }
 
+  @Operation(summary = "Update vehicle by id", description = "Atualiza os dados de um veículo cadastrado na base de dados com base no id")
   @PutMapping("/{id}")
   public ResponseEntity<?> updateVehicle(@PathVariable int id,
       @Valid @RequestBody VehicleRequestDTO body) {
@@ -82,6 +90,7 @@ public class VehicleController {
     return new ResponseEntity<>(vehicleResponseDTO, HttpStatus.OK);
   }
 
+  @Operation(summary = "Update partial data of vehicle by id", description = "Atualiza os dados, de forma total ou parcial de um veículo cadastrado na base de dados com base no id")
   @PatchMapping("/{id}")
   public ResponseEntity<?> updateVehicle(@PathVariable int id,
       @Valid @RequestBody VehiclePatchDTO body) {
@@ -93,24 +102,28 @@ public class VehicleController {
     return new ResponseEntity<>(vehicleResponseDTO, HttpStatus.OK);
   }
 
+  @Operation(summary = "Count unsold vehicles", description = "Retorna a quantidade de veículos nao vendidos")
   @GetMapping("/unsold")
   public ResponseEntity<?> countUnsoldVehicles() {
     long count = this.vehicleService.countUnsoldVehicles();
     return new ResponseEntity<>(count, HttpStatus.OK);
   }
 
+  @Operation(summary = "Count vehicles by brand", description = "Retorna a quantidade de veículos por marca")
   @GetMapping("/brand")
   public ResponseEntity<?> countByMarca() {
     Map<VehicleBrands, Long> count = this.vehicleService.countByMarca();
     return new ResponseEntity<>(count, HttpStatus.OK);
   }
 
+  @Operation(summary = "Count vehicles by decade", description = "Retorna a quantidade de veículos por decada")
   @GetMapping("/decade")
   public ResponseEntity<?> getVehiclesByDecade() {
     Map<Integer, Long> vehicles = this.vehicleService.getVehiclesByDecade();
     return new ResponseEntity<>(vehicles, HttpStatus.OK);
   }
 
+  @Operation(summary = "Get vehicles from last week", description = "Retorna os veículos criados na ultima semana")
   @GetMapping("/lastweek")
   public ResponseEntity<?> getVehiclesFromLastWeek() {
     List<Vehicle> vehicles = this.vehicleService.getVehiclesFromLastWeek();
